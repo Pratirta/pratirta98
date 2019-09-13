@@ -12,12 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="kontak" class="col-md-4 col-form-label text-md-right">{{ __('Kontak') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="kontak" type="kontak" class="form-control @error('kontak') is-invalid @enderror" name="kontak" value="{{ old('kontak') }}" required autocomplete="kontak" autofocus>
 
-                                @error('email')
+                                @error('kontak')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -38,6 +38,24 @@
                                 @enderror
                             </div>
                         </div>
+            <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
+                      <label for="password" class="col-md-4 control-label">Captcha</label>
+
+
+                      <div class="col-md-6">
+                          <div class="captcha">
+                          <span>{!! captcha_img() !!}</span>
+                          <button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
+                          </div>
+                          <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+
+
+                          @if ($errors->has('captcha'))
+                              <span class="help-block">
+                                  <strong>{{ $errors->first('captcha') }}</strong>
+                              </span>
+                          @endif
+                      </div>
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
