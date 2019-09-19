@@ -39,12 +39,12 @@
                             </div>
                         </div>
             <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
-                      <label for="password" class="col-md-4 control-label">Captcha</label>
+                      <label for="captcha" class="col-md-4 control-label">Captcha</label>
 
 
                       <div class="col-md-6">
                           <div class="captcha">
-                          <span>{!! captcha_img() !!}</span>
+                          <span>{!! captcha_img('flat') !!}</span>
                           <button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
                           </div>
                           <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">

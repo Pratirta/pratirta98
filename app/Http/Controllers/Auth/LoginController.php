@@ -17,6 +17,10 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
+    }
 
     use AuthenticatesUsers;
 
@@ -36,4 +40,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
 }
