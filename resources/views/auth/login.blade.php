@@ -42,7 +42,7 @@
                       <label for="captcha" class="col-md-4 control-label">Captcha</label>
 
 
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                           <div class="captcha">
                           <span>{!! captcha_img('flat') !!}</span>
                           <button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
@@ -58,7 +58,7 @@
                       </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-4 offset-md-8">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
